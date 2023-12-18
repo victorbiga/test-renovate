@@ -1,16 +1,13 @@
 {
   "extends": ["config:base"],
-  "regexManagers": [
+  "packageRules": [
     {
-      "fileMatch": [
-        "apps/cert-manager/production/config_dir.json"
-      ],
-      "matchStrings": [
-        "\"chartVersion\": \"(\\d+\\.\\d+\\.\\d+)\""
-      ],
-      "datasourceTemplate": "github-tags",
-      "depNameTemplate": "cert-manager",
-      "currentValueTemplate": "${match[1]}"
+      "matchUpdateTypes": ["version"],
+      "updateTypes": ["github"],
+      "depName": "cert-manager",
+      "versioning": "regex",
+      "sourceUrl": "https://github.com/victorbiga/test-renovate",
+      "tagPrefix": "cert-manager-v"
     }
   ],
   "dependencyDashboard": true
