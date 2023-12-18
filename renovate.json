@@ -20,9 +20,9 @@
       "fileMatch": [
         "\\.json$"
       ],
-      "matchStrings": ["https://raw.githubusercontent.com/argoproj/argo-cd/v(?<currentValue>.*)/manifests/install.yaml"],
+      "matchStrings": ["chartVersion": "(?<currentValue>.*"],
       "datasourceTemplate": "github-tags",
-      "depNameTemplate": "victorbiga/test-renovate",
+      "depNameTemplate": "dependencies",
       "extractVersionTemplate": "^v(?<version>.*)$"
     }
   ]
