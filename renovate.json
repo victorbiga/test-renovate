@@ -24,7 +24,7 @@
       ],
       "depNameTemplate": "cert-manager",
       "datasourceTemplate": "github-tags",
-      "extractVersionTemplate": "^v(?<version>.*)$"
+      "extractVersionTemplate": "^cert-manager-v(?<version>.*)$"
     }
   ]
 }
