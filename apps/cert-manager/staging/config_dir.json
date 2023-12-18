@@ -1,0 +1,8 @@
+{
+  "appName": "cert-manager",
+  "destNamespace": "cert-manager",
+  "valuesRepoURL": "https://github.com/ridedott/k8s-applications.git",
+  "chartRepoURL": "europe-docker.pkg.dev/assets-prod-dott-com/charts",
+  "chartName": "cert-manager",
+  "chartVersion": "1.2.1"
+}
