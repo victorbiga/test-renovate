@@ -22,8 +22,7 @@
         "\"chartVersion\": \"(?<currentValue>.*)\""
       ],
       "depNameTemplate": "victorbiga/test-renovate",
-      "datasourceTemplate": "git-tags",
-      "extractVersionTemplate": "^cert-manager-v(?<version>.*)$"
+      "datasourceTemplate": "git-tags"
     }
   ]
 }
