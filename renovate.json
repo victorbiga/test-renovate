@@ -1,14 +1,29 @@
 {
-  "extends": ["config:base"],
-  "packageRules": [
-    {
-      "matchUpdateTypes": ["version"],
-      "updateTypes": ["github"],
-      "depName": "cert-manager",
-      "versioning": "regex",
-      "sourceUrl": "https://github.com/victorbiga/test-renovate",
-      "tagPrefix": "cert-manager-v"
-    }
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base"
   ],
-  "dependencyDashboard": true
+  "packageRules": [{
+    "description": "Cert Manager Production",
+    "matchPaths": ["apps/cert-manager/config_dir.json"],
+    "enabled": true,
+    "automerge": false,
+    "commitMessage": "chore(cert-manager): Cert Manager Production {{currentValue}} update to {{newValue}}" 
+  }],
+  "dependencyDashboard": true,
+  "dependencyDashboardApproval": true,
+  "certManager": {
+    "fileMatch": ["apps/cert-manager/production/.+\\.js?on$"]
+  },
+  "regexManagers": [
+    {
+      "fileMatch": [
+        "\\.json$"
+      ],
+      "matchStrings": ["https://raw.githubusercontent.com/argoproj/argo-cd/v(?<currentValue>.*)/manifests/install.yaml"],
+      "datasourceTemplate": "github-tags",
+      "depNameTemplate": "victorbiga/test-renovate",
+      "extractVersionTemplate": "^v(?<version>.*)$"
+    }
+  ]
 }
