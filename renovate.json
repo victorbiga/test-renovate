@@ -9,7 +9,8 @@
         "\"chartVersion\": \"(\\d+\\.\\d+\\.\\d+)\""
       ],
       "datasourceTemplate": "github-tags",
-      "depNameTemplate": "cert-manager"
+      "depNameTemplate": "cert-manager",
+      "currentValueTemplate": "${match[1]}"
     }
   ],
   "dependencyDashboard": true
