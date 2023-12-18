@@ -1,4 +1,3 @@
-
 {
   "extends": ["config:base"],
   "regexManagers": [
@@ -10,7 +9,8 @@
       "matchStrings": [
         "\"chartVersion\": \"(\\d+\\.\\d+\\.\\d+)\""
       ],
-      "datasourceTemplate": "${platform}-${appName}-chart-version-${match[1]}"
+      "datasourceTemplate": "cert-manager-chart-version-${match[1]}",
+      "currentValueTemplate": "${match[1]}"
     }
   ],
   "dependencyDashboard": {
