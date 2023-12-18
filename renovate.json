@@ -8,7 +8,7 @@
       "description": "Cert Manager Production",
       "matchPaths": ["apps/cert-manager/production/.+\\.js?on$"],
       "enabled": true,
-      "automerge": false,
+      "automerge": false
     }
   ],
   "dependencyDashboard": true,
@@ -21,7 +21,7 @@
       "matchStrings": [
         "\"chartVersion\": \"(?<currentValue>.*)\""
       ],
-      "depNameTemplate": "cert-manager",
+      "depNameTemplate": "victorbiga/test-renovate",
       "datasourceTemplate": "git-tags",
       "extractVersionTemplate": "^cert-manager-v(?<version>.*)$"
     }
