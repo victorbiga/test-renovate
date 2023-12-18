@@ -20,7 +20,7 @@
       "fileMatch": [
         "\\.json$"
       ],
-      "matchStrings": ["chartVersion": "(?<currentValue>.*"],
+      "matchStrings": ["\"chartVersion\": \"(?<currentValue>.*)\""],
       "datasourceTemplate": "github-tags",
       "depNameTemplate": "dependencies",
       "extractVersionTemplate": "^v(?<version>.*)$"
