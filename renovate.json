@@ -3,24 +3,25 @@
   "extends": [
     "config:base"
   ],
-  "packageRules": [{
-    "description": "Cert Manager Production",
-    "matchPaths": ["apps/cert-manager/config_dir.json"],
-    "enabled": true,
-    "automerge": false,
-    "commitMessage": "chore(cert-manager): Cert Manager Production {{currentValue}} update to {{newValue}}" 
-  }],
+  "packageRules": [
+    {
+      "description": "Cert Manager Production",
+      "matchPaths": ["apps/cert-manager/production/.+\\.js?on$"],
+      "enabled": true,
+      "automerge": false,
+      "commitMessage": "chore(cert-manager): Cert Manager Production {{currentValue}} update to {{newValue}}"
+    }
+  ],
   "dependencyDashboard": true,
   "dependencyDashboardApproval": true,
-  "certManager": {
-    "fileMatch": ["apps/cert-manager/production/.+\\.js?on$"]
-  },
   "regexManagers": [
     {
       "fileMatch": [
         "\\.json$"
       ],
-      "matchStrings": ["\"chartVersion\": \"(?<currentValue>.*)\""],
+      "matchStrings": [
+        "\"chartVersion\": \"(?<currentValue>.*)\""
+      ],
       "datasourceTemplate": "github-tags",
       "depNameTemplate": "dependencies",
       "extractVersionTemplate": "^v(?<version>.*)$"
