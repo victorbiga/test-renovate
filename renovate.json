@@ -8,9 +8,10 @@
       "matchStrings": [
         "\"chartVersion\": \"(\\d+\\.\\d+\\.\\d+)\""
       ],
-      "datasourceTemplate": "cert-manager-chart-version-${match[1]}",
-      "currentValueTemplate": "${match[1]}",
-      "depNameTemplate": "cert-manager"
+      "depNameTemplate": "cert-manager",
+      "versioning": "regex",
+      "sourceUrl": "https://github.com/victorbiga/test-renovate",
+      "tagPrefix": "cert-manager-v"
     }
   ],
   "dependencyDashboard": true
