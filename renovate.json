@@ -1,49 +1,19 @@
+
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:base"
+  "extends": ["config:base"],
+  "regexManagers": [
+    {
+      "fileMatch": [
+        "**/staging/*/config_dir.json",
+        "**/production/*/config_dir.json"
+      ],
+      "matchStrings": [
+        "\"chartVersion\": \"(\\d+\\.\\d+\\.\\d+)\""
+      ],
+      "datasourceTemplate": "${platform}-${appName}-chart-version-${match[1]}"
+    }
   ],
-  "staging": {
-    "enabled": true,
-    "regexManagers": [
-      {
-        "fileMatch": ["apps/cert-manager/staging/config_dir.json"],
-        "matchStrings": [
-          "\"chartVersion\": \"(\\d+\\.\\d+\\.\\d+)\""
-        ],
-        "datasourceTemplate": "staging-cert-manager-version-${match[1]}"
-      },
-      {
-        "fileMatch": ["**/staging/another_app/config_dir.json"],
-        "matchStrings": [
-          "\"chartVersion\": \"(\\d+\\.\\d+\\.\\d+)\""
-        ],
-        "datasourceTemplate": "staging-another-app-chart-version-${match[1]}"
-      }
-    ]
-  },
-  "production": {
-    "enabled": true,
-    "regexManagers": [
-      {
-        "fileMatch": ["apps/cert-manager/production/config_dir.json"],
-        "matchStrings": [
-          "\"chartVersion\": \"(\\d+\\.\\d+\\.\\d+)\""
-        ],
-        "datasourceTemplate": "production-cert-manager-version-${match[1]}"
-      },
-      {
-        "fileMatch": ["apps/another-app/production/another_app/config_dir.json"],
-        "matchStrings": [
-          "\"chartVersion\": \"(\\d+\\.\\d+\\.\\d+)\""
-        ],
-        "datasourceTemplate": "production-another-app-chart-version-${match[1]}"
-      }
-    ],
-    "dependencyDashboard": {
-      "prCreation": "auto"
-    },
-    "group": ["staging"]
+  "dependencyDashboard": {
+    "prCreation": "auto"
   }
 }
-
