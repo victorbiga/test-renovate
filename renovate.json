@@ -23,7 +23,7 @@
         "\"chartVersion\": \"(?<currentValue>.*)\""
       ],
       "datasourceTemplate": "github-tags",
-      "depNameTemplate": "dependencies",
+      "depNameTemplate": "cert-manager",
       "extractVersionTemplate": "^v(?<version>.*)$"
     }
   ]
