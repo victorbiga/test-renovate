@@ -21,8 +21,7 @@
       "matchStrings": [
         "\"chartVersion\": \"(?<currentValue>.*)\""
       ],
-      "depNameTemplate": "victorbiga/test-renovate",
-      "datasourceTemplate": "git-tags"
+      "datasourceTemplate": "git-tags",
     }
   ]
 }
