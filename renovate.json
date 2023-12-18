@@ -1,17 +1,17 @@
 {
   "extends": ["config:base"],
-  "regexManagers": [
+  "packageRules": [
     {
+      "matchUpdateTypes": ["version"],
+      "updateTypes": ["github-tags"],
+      "datasourceTemplate": "github-tags",
+      "depName": "cert-manager",
+      "versioning": "regex",
+      "sourceUrl": "https://github.com/victorbiga/test-renovate",
+      "tagPrefix": "cert-manager-v",
       "fileMatch": [
-        "apps/cert-manager/staging/config_dir.json",
-        "apps/cert-manager/production/config_dir.json"
-      ],
-      "matchStrings": [
-        "\"chartVersion\": \"(\\d+\\.\\d+\\.\\d+)\""
-      ],
-      "datasourceTemplate": "${depName}-chart-version-${match[1]}",
-      "currentValueTemplate": "${match[1]}",
-      "depNameTemplate": "cert-manager"
+        "apps/cert-manager/production/config_dir.json",
+      ]
     }
   ],
   "dependencyDashboard": true
