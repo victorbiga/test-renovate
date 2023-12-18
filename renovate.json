@@ -4,8 +4,8 @@
   "regexManagers": [
     {
       "fileMatch": [
-        "**/staging/*/config_dir.json",
-        "**/production/*/config_dir.json"
+        "apps/cert-manager/staging/config_dir.json",
+        "apps/cert-manager/production/config_dir.json"
       ],
       "matchStrings": [
         "\"chartVersion\": \"(\\d+\\.\\d+\\.\\d+)\""
