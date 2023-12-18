@@ -10,10 +10,9 @@
         "\"chartVersion\": \"(\\d+\\.\\d+\\.\\d+)\""
       ],
       "datasourceTemplate": "cert-manager-chart-version-${match[1]}",
-      "currentValueTemplate": "${match[1]}"
+      "currentValueTemplate": "${match[1]}",
+      "depNameTemplate": "cert-manager"
     }
   ],
-  "dependencyDashboard": {
-    "prCreation": "auto"
-  }
+  "dependencyDashboard": true
 }
