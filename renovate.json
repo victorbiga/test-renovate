@@ -9,7 +9,6 @@
       "matchPaths": ["apps/cert-manager/production/.+\\.js?on$"],
       "enabled": true,
       "automerge": false,
-      "commitMessage": "chore(cert-manager): Cert Manager Production {{currentValue}} update to {{newValue}}"
     }
   ],
   "dependencyDashboard": true,
